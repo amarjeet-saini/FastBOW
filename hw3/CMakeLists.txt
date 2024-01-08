@@ -8,7 +8,8 @@ include_directories(include/)
 # detect fmt libraty
 find_package(fmt)
 
+add_library(image_browser src/image_browser.cpp)
 add_library(html_writer src/html_writer.cpp)
 add_executable(main src/main.cpp)
 
-target_link_libraries(main html_writer fmt::fmt stdc++fs)
+target_link_libraries(main image_browser html_writer fmt::fmt stdc++fs)
