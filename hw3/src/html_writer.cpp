@@ -3,7 +3,6 @@
 #include <fmt/core.h>
 #include <experimental/filesystem>
 #include <algorithm>
-#include <string>
 
 using std::cout;
 using std::endl;
@@ -33,7 +32,7 @@ void html_writer::AddTitle(const std::string& title) {
 
 void html_writer::AddCSSStyle(const std::string& stylesheet) {
   cout << " <head>" << endl;
-  cout << "   <link rel=\"stylesheet\"" <<  " type=\"text/css\"" <<  " href=\"" << stylesheet << "\" />" << endl;
+  cout << "   <link rel=\"stylesheet\" type=\"text/css\" href=\"" << stylesheet << "\" />" << endl;
   cout << "</head>" << endl;
 }
 
@@ -42,7 +41,7 @@ void html_writer::OpenBody() {
 }
 
 void html_writer::CloseBody() {
-  cout << " <body>" << endl;
+  cout << " </body>" << endl;
 }
 
 void html_writer::OpenRow() {
@@ -74,8 +73,7 @@ void html_writer::AddImage(const std::string& img_path, float score, bool highli
   else {
     cout << "<div class=\"column\">" << endl;
   } 
-
-  cout << "<h2>" << img_path.substr(img_path.rfind("/") + 1) << "</h2>" << endl; 
+  cout << "<h2>" << fs_image_path.filename() << "</h2>" << endl; 
   cout << " <img src=\"" << img_path << "\"/>" << endl;
   fmt::print("<p>score = {:.2f}</p>\n", score);
   cout << "</div>" << endl;

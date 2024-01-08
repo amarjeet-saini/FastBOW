@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named image_browser
+
+# Build rule for target.
+image_browser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 image_browser
+.PHONY : image_browser
+
+# fast build rule for target.
+image_browser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_browser.dir/build.make CMakeFiles/image_browser.dir/build
+.PHONY : image_browser/fast
+
+#=============================================================================
 # Target rules for targets named html_writer
 
 # Build rule for target.
@@ -166,6 +179,30 @@ src/html_writer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/html_writer.dir/build.make CMakeFiles/html_writer.dir/src/html_writer.cpp.s
 .PHONY : src/html_writer.cpp.s
 
+src/image_browser.o: src/image_browser.cpp.o
+.PHONY : src/image_browser.o
+
+# target to build an object file
+src/image_browser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_browser.dir/build.make CMakeFiles/image_browser.dir/src/image_browser.cpp.o
+.PHONY : src/image_browser.cpp.o
+
+src/image_browser.i: src/image_browser.cpp.i
+.PHONY : src/image_browser.i
+
+# target to preprocess a source file
+src/image_browser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_browser.dir/build.make CMakeFiles/image_browser.dir/src/image_browser.cpp.i
+.PHONY : src/image_browser.cpp.i
+
+src/image_browser.s: src/image_browser.cpp.s
+.PHONY : src/image_browser.s
+
+# target to generate assembly for a file
+src/image_browser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_browser.dir/build.make CMakeFiles/image_browser.dir/src/image_browser.cpp.s
+.PHONY : src/image_browser.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -199,10 +236,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... html_writer"
+	@echo "... image_browser"
 	@echo "... main"
 	@echo "... src/html_writer.o"
 	@echo "... src/html_writer.i"
 	@echo "... src/html_writer.s"
+	@echo "... src/image_browser.o"
+	@echo "... src/image_browser.i"
+	@echo "... src/image_browser.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

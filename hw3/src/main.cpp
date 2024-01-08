@@ -1,23 +1,29 @@
-#include "html_writer.hpp"
+#include <fstream>
 #include <iostream>
+#include "image_browser.hpp"
+#include <tuple>
 
-int main(int argc, char *argv[]) 
-{
-	html_writer::OpenDocument();
-	html_writer::AddTitle("Image Browser");
-	html_writer::AddCSSStyle("/home/amarjeet/Project/FastBOW/hw3/src/style.css");
-	html_writer::OpenBody();
-	html_writer::OpenRow();
-	html_writer::AddImage("/home/amarjeet/Project/FastBOW/hw3/src/data/000000.png", 0.96, true);
-	html_writer::AddImage("/home/amarjeet/Project/FastBOW/hw3/src/data/000100.png", 0.9);
-	html_writer::AddImage("/home/amarjeet/Project/FastBOW/hw3/src/data/000200.png", 0.011);
-	html_writer::CloseRow();
-	html_writer::OpenRow();
-	html_writer::AddImage("/home/amarjeet/Project/FastBOW/hw3/src/data/000300.png", 0.96, true);
-	html_writer::AddImage("/home/amarjeet/Project/FastBOW/hw3/src/data/000400.png", 0.9);
-	html_writer::AddImage("/home/amarjeet/Project/FastBOW/hw3/src/data/000500.png", 0.011);
-	html_writer::CloseRow();
-	html_writer::CloseBody();
-	html_writer::CloseDocument();	
- 	return 0;
+
+int main(int argc, char *argv[]) {
+  const std::string stylesheet{"style.css"};
+  const std::string title{"Image Browser"};
+  
+  image_browser::ScoredImage image;
+  image_browser::ImageRow image_row;
+  std::vector<image_browser::ImageRow> images;
+  std::ifstream fin("/home/amarjeet/Project/FastBOW/hw3/src/config.txt");
+  std::string path;
+  float score;
+  size_t i = 0; 
+  while (fin >> path >> score) 
+  {
+    image_row[i++] = make_tuple(path,score);
+    if (i == 3) {
+      i = 0; 
+      images.push_back(image_row);
+    }
+  } 
+
+  image_browser::CreateImageBrowser(title, stylesheet,images);
+  return 0;
 }

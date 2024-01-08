@@ -227,8 +227,21 @@ CMakeFiles/html_writer.dir/src/html_writer.cpp.o: /home/amarjeet/Project/FastBOW
   /usr/include/c++/7/sstream \
   /usr/include/c++/7/bits/sstream.tcc \
   /usr/include/c++/7/experimental/bits/fs_dir.h \
-  /usr/include/c++/7/experimental/bits/fs_ops.h
+  /usr/include/c++/7/experimental/bits/fs_ops.h \
+  /usr/include/c++/7/algorithm \
+  /usr/include/c++/7/bits/stl_algo.h \
+  /usr/include/c++/7/bits/algorithmfwd.h \
+  /usr/include/c++/7/bits/stl_heap.h \
+  /usr/include/c++/7/bits/uniform_int_dist.h
 
+
+/usr/include/c++/7/bits/uniform_int_dist.h:
+
+/usr/include/c++/7/bits/algorithmfwd.h:
+
+/usr/include/c++/7/bits/stl_algo.h:
+
+/usr/include/c++/7/algorithm:
 
 /usr/include/c++/7/bits/sstream.tcc:
 
@@ -355,6 +368,8 @@ CMakeFiles/html_writer.dir/src/html_writer.cpp.o: /home/amarjeet/Project/FastBOW
 /usr/include/c++/7/bits/cxxabi_init_exception.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/c++/7/bits/stl_heap.h:
 
 /usr/include/ctype.h:
 

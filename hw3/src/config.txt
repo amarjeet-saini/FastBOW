@@ -1,0 +1,9 @@
+data/000000.png 0.98
+data/000100.png 0.96
+data/000200.png 0.88
+data/000300.png 0.87
+data/000400.png 0.80
+data/000500.png 0.79
+data/000600.png 0.76
+data/000700.png 0.75
+data/000800.png 0.20

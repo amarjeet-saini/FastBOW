@@ -92,6 +92,7 @@ main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/src/main.cpp.o
 main: CMakeFiles/main.dir/build.make
+main: libimage_browser.a
 main: libhtml_writer.a
 main: /usr/local/lib/libfmt.a
 main: CMakeFiles/main.dir/link.txt

@@ -229,4 +229,9 @@ CMakeFiles/html_writer.dir/src/html_writer.cpp.o
  /usr/include/c++/7/bits/sstream.tcc
  /usr/include/c++/7/experimental/bits/fs_dir.h
  /usr/include/c++/7/experimental/bits/fs_ops.h
+ /usr/include/c++/7/algorithm
+ /usr/include/c++/7/bits/stl_algo.h
+ /usr/include/c++/7/bits/algorithmfwd.h
+ /usr/include/c++/7/bits/stl_heap.h
+ /usr/include/c++/7/bits/uniform_int_dist.h
 
