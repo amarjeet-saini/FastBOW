@@ -8,16 +8,6 @@ using std::cout;
 using std::endl;
 namespace fs = std::experimental;
 
-namespace index_extension
-{
-  int findFileName(const std::string& s) 
-  {
-    std::string temp = s;
-    reverse(temp.begin(), temp.end());
-    return - temp.size();
-  }
-} // namespace index_extension
-
 void html_writer::OpenDocument() {
   cout << "<!DOCTYPE html>\n<html>" << endl;  
 }

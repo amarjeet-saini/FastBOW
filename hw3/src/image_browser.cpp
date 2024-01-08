@@ -1,6 +1,5 @@
 #include "image_browser.hpp"
 
-
 void image_browser::AddFullRow(const ImageRow& row, bool first_row){
     for(int i = 0; i < 3; i++){
         if (i != 0 && first_row) first_row = false;
