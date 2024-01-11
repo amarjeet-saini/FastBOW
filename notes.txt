@@ -1,0 +1,4 @@
+matrix
+
+cv::Mat - basic matrix type (every image is this type)
+

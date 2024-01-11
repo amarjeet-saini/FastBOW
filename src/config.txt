@@ -1,0 +1,9 @@
+../../data/html/000000.png 0.98
+../../data/html/000100.png 0.96
+../../data/html/000200.png 0.88
+../../data/html/000300.png 0.87
+../../data/html/000400.png 0.80
+../../data/html/000500.png 0.79
+../../data/html/000600.png 0.76
+../../data/html/000700.png 0.75
+../../data/html/000800.png 0.20
