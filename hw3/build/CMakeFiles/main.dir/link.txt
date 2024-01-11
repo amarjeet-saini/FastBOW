@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/main.dir/src/main.cpp.o -o main  libimage_browser.a libhtml_writer.a /usr/local/lib/libfmt.a -lstdc++fs 

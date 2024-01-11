@@ -1,5 +1,0 @@
-/home/amarjeet/Project/FastBOW/hw3/build/CMakeFiles/image_browser.dir
-/home/amarjeet/Project/FastBOW/hw3/build/CMakeFiles/html_writer.dir
-/home/amarjeet/Project/FastBOW/hw3/build/CMakeFiles/main.dir
-/home/amarjeet/Project/FastBOW/hw3/build/CMakeFiles/edit_cache.dir
-/home/amarjeet/Project/FastBOW/hw3/build/CMakeFiles/rebuild_cache.dir
