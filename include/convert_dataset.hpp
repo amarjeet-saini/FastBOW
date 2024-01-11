@@ -1,16 +1,15 @@
 // @file      convert_dataset.hpp
-// @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
-//
-// Copyright (c) 2020 Ignacio Vizzo, all rights reserved
+// @author    Amarjeet Saini 
+
 #ifndef CONVERT_DATASET_HPP_
 #define CONVERT_DATASET_HPP_
 
+#include "serialize.hpp"
+#include <opencv2/core/mat.hpp>
 #include <experimental/filesystem>
 #include <string>
 #include <vector>
 #include <iostream>
-#include <opencv2/core/mat.hpp>
-#include "serialize.hpp"
 
 namespace fs = std::experimental::filesystem;
 

@@ -5,11 +5,9 @@
 #ifndef SERIALIZE_HPP_
 #define SERIALIZE_HPP_
 
-#include <string>
-#include <fstream>
 #include <opencv2/core/mat.hpp>
+#include <fstream>
 #include <stdlib.h>
-#include <iostream>
 
 namespace ipb::serialization {
 

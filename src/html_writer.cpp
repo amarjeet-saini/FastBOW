@@ -1,5 +1,5 @@
-#include <iostream>
 #include "html_writer.hpp"
+#include <iostream>
 #include <fmt/core.h>
 #include <experimental/filesystem>
 #include <algorithm>

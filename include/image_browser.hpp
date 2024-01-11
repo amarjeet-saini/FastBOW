@@ -1,15 +1,14 @@
 // @file      image_browser.hpp
-// @author    Ignacio Vizzo     [ivizzo@uni-bonn.de]
-//
-// Copyright (c) 2020 Ignacio Vizzo, all rights reserved
+// @author    Amarjeet Saini 
+
 #ifndef IMAGE_BROWSER_HPP_
 #define IMAGE_BROWSER_HPP_
 
+#include "html_writer.hpp"
 #include <array>
 #include <string>
 #include <tuple>
 #include <vector>
-#include "html_writer.hpp"
 
 namespace image_browser {
 
