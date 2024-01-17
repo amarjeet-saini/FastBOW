@@ -3,6 +3,10 @@
 #include <opencv2/opencv.hpp>
 
 void ipb::serialization::sifts::ConvertDataset(const fs::path& img_path) {
+    // create bin dir to store .bin files
+    std::experimental::filesystem::path bin_dir="bin";
+    std::experimental::filesystem::create_directory(img_path.parent_path()/bin_dir);
+
     for (const auto &entry : fs::directory_iterator(img_path)) {
         cv::Mat image = cv::imread(entry.path(), cv::IMREAD_COLOR);
         if (image.empty()) {
@@ -16,16 +20,21 @@ void ipb::serialization::sifts::ConvertDataset(const fs::path& img_path) {
         detector->detect(image, keypoints);
   
         // compute sift descriptor
-        cv::Mat temp;
+        cv::Mat buffer;
         auto extractor = cv::SiftDescriptorExtractor::create();
-        extractor->compute(image, keypoints, temp);
+        extractor->compute(image, keypoints, buffer);
+        
+        // store sift descriptor in .bin file
+        std::experimental::filesystem::path fileToCopy = entry;
+        fileToCopy.replace_extension(".bin");
+        auto out_file= img_path.parent_path()/bin_dir/ fileToCopy.filename();
 
-        std::string s =  "../data/freiburg/bin/" + entry.path().filename().replace_extension(".bin").u8string();
-        ipb::serialization::Serialize(temp, s);
+        //fileToCopy.filename();
+        ipb::serialization::Serialize(buffer, out_file);
         
         // release resource explicitly
         keypoints.clear();
-        temp.release();
+        buffer.release();
         extractor.release();
     }
 }

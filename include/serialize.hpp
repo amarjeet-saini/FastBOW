@@ -8,6 +8,7 @@
 #include <opencv2/core/mat.hpp>
 #include <fstream>
 #include <stdlib.h>
+#include <iostream>
 
 namespace ipb::serialization {
 

@@ -3,13 +3,14 @@
 #include "convert_dataset.hpp"
 
 int main() 
-{  .
-    const std::string path = "../data/freiburg/";
+{  
+    const std::string path = "../../data/freiburg/";
     ipb::serialization::sifts::ConvertDataset(path + "images");
     std::vector<cv::Mat> bimg;
     for (const auto &entry : fs::directory_iterator(path + "bin")) {
         bimg.push_back(ipb::serialization::Deserialize(entry.path()));
     }
+    std::cout << bimg.size() << std::endl;
     /* 
     std::cout << "hello, opencv" << std::endl;
     

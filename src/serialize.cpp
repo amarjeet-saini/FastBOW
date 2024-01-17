@@ -1,10 +1,11 @@
 #include "serialize.hpp"
 
-void ipb::serialization::Serialize(const cv::Mat& m,
-                                   const std::string& filename) {
-  std::ofstream file(filename, std::ios::out | std::ios::binary | std::ios::app);
+void ipb::serialization::Serialize(const cv::Mat& m, const std::string& filename) {
+  std::ofstream file(filename, std::ios::out | std::ios::binary);
+
+  // error checking of valid file 
   if (!file.is_open()) {
-    std::cerr << "Error opening file: " << filename << "\n";
+    std::cerr << "serialize, Error opening file: " << filename << "\n";
     throw std::runtime_error("Unable to open file");
   }
 
@@ -17,7 +18,7 @@ void ipb::serialization::Serialize(const cv::Mat& m,
   file.write(reinterpret_cast<char*>(&type), sizeof(type));
   file.write(reinterpret_cast<char*>(m.data), m.total() * m.elemSize());
 
-  // Write pixel data to file
+  // Write pixel data to bin file
   if (m.isContinuous()) {
     file.write(reinterpret_cast<const char*>(m.data), m.total() * m.elemSize());
   }
@@ -26,9 +27,11 @@ void ipb::serialization::Serialize(const cv::Mat& m,
 
 cv::Mat ipb::serialization::Deserialize(const std::string& filename) {
   std::ifstream file;
-  file.open(filename, std::ios::binary);
+  file.open(filename, std::ios::binary | std::ios::in);
+  
+  // error checking of valid file 
   if (!file.is_open()) {
-    std::cerr << "Error opening file: " << filename << "\n";
+    std::cerr << "deserialize, Error opening file: " << filename << "\n";
     throw std::runtime_error("Unable to open file");
   }
 
