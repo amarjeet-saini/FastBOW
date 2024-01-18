@@ -4,9 +4,9 @@ Documentation page of Fast Bag of Words(FastBOW)
 
 #### What is Bag Of Words ?
 The Bag of Visual Words (BOVW) model is a technique in computer vision that allows for the compact representation of images. With BOVW, images are represented using a collection of visual words, enabling efficient storage and retrieval. This model excels at performing similarity comparisons in a database when given a query image.
-<div style="text-align:center">
+<p align="center">
   <img src="project_resources/bow.png" width=50% height=50%/>
-</div>
+</p>
 
 
 #### Where it is used ?
